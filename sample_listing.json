@@ -1,5 +1,4 @@
 {
-    "id": "c59dcff5760542ce8c4afe45e9000765",
     "timestamp": 1665946206,
     "title": "KitchenAid Blender - Model KSB560MC0",
     "description": "5 (Five) Speeds: Stir, Chop, Mix, Puree, Liquefy\n2 (Two) Functions: Pulse Mode, Crush Ice\nFeatures:\n720-Watt Peak Power Motor\nHeavy plastic 56-ounce pitcher\nEasy-Pour Spout Designed to Eliminate Drips",
@@ -16,7 +15,6 @@
     },
     "questions": [
         {
-            "id": "ddfb7e366b5c47f5a39951468cd472a9",
             "timestamp": 1665946446,
             "author": "Bruce Wu",
             "body": "What is the capacity of the blender?",
@@ -26,13 +24,11 @@
             }
         },
         {
-            "id": "cc0b74a4a98b4295b2e0e1c7e2d22150",
             "timestamp": 1665946573,
             "author": "Evan Huang",
             "body": "Can I use this blender for hot food items?"
         },
         {
-            "id": "793d2020fedf46f5a4e34e2e3952e4db",
             "timestamp": 1665946582,
             "author": "Laura Lourenco",
             "body": "Is there storage for the cord?",
