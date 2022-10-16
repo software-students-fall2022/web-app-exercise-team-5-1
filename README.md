@@ -5,11 +5,18 @@ A little exercise to build a web application following an agile development proc
 
 ## Product vision statement
 
-See instructions. Delete this line and place the Product Vision Statement here.
+A platform to connect people offering goods and services with those who are interested.
 
 ## User stories
 
-See instructions. Delete this line and place a link to the user stories here.
+- As a buyer, I want to be able to see all listings in a page so that I can pick the one I am interested in.
+- As a buyer, I want to be able to search listings so I can see if any listings are relevant to the goods and services I want.
+- As a buyer, I want to be able to see the details of each listing to gain a better understanding of the good or service being offered.
+- As a buyer, I want to be able to ask questions to the seller so that I can ascertain more information about the product.
+- As a seller, I want to be able to add listings so that buyers can find my products/services.
+- As a seller, I want to be able to edit my listings so that I can inform potential buyers about the latest information of my listing.
+- As a seller, I want to be able to delete my listings so that I no longer receive communication about listings that are not available anymore.
+- As a seller, I want to be able to answer general questions which other potential buyers are able to see, so that I don’t need to answer them multiple times. 
 
 ## Task boards
 
