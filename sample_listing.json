@@ -1,0 +1,41 @@
+{
+    "timestamp": 1665946206,
+    "title": "KitchenAid Blender - Model KSB560MC0",
+    "description": "5 (Five) Speeds: Stir, Chop, Mix, Puree, Liquefy\n2 (Two) Functions: Pulse Mode, Crush Ice\nFeatures:\n720-Watt Peak Power Motor\nHeavy plastic 56-ounce pitcher\nEasy-Pour Spout Designed to Eliminate Drips",
+    "price": 45.00,
+    "images": [
+        "001.png",
+        "002.png"
+    ],
+    "author": "Harrison Douglass",
+    "password": {
+        "hash": "$2a$12$h4fZbjtqRdmt8aDm0jkdjOOnwxhLW4ERXqyr1ZS0SCzXWXK0SLlrK",
+        "salt": "a805ddc1661f4752aee0a8bbd757d8dd",
+        "plaintext (obviously not in final product)": "test"
+    },
+    "questions": [
+        {
+            "timestamp": 1665946446,
+            "author": "Bruce Wu",
+            "body": "What is the capacity of the blender?",
+            "answer": {
+                "timestamp": 1665946654, 
+                "body": "The blender can hold about 4 cups."
+            }
+        },
+        {
+            "timestamp": 1665946573,
+            "author": "Evan Huang",
+            "body": "Can I use this blender for hot food items?"
+        },
+        {
+            "timestamp": 1665946582,
+            "author": "Laura Lourenco",
+            "body": "Is there storage for the cord?",
+            "answer": {
+                "timestamp": 1665946661, 
+                "body": "There is a channel underneath the blender that allows you to wrap about four inches of the cord in it."
+            }
+        }
+    ]
+}
