@@ -1,1 +1,22 @@
-Home page, where all listings will show up. Will also allow you to search.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Listings</title>
+</head>
+<body>
+    Home page, where all listings will show up. Will also allow you to search.
+
+    <div id="listings">
+        {% for listing in listings %}
+        <div>
+            <h3>{{listing.title}}</h3>
+            <div>Listed by {{listing.author}}</div>
+            <div>Price is {{listing.price}}</div>
+            <div>Description: {{listing.description}}</div>
+            <div><a href="/listing/{{listing.id}}">See more</a></div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

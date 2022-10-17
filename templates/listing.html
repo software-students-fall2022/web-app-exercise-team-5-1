@@ -1,1 +1,35 @@
-Listing detail page, where all details about a particular listing will show up.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing - {{listing.name}}</title>
+</head>
+<body>
+    <h1>{{listing.title}}</h1>
+    <h3>{{listing.author}}</h3>
+    <div>{{listing.description}}</div>
+    <div>
+        {% for question in questions %}
+        <div>
+            <div>{{question.body}}</div>
+            <div>Asked by {{question.author}}</div>
+            {% if question.answer is defined %}
+                <div>Answer: {{question.answer.body}}</div>
+            {% else %}
+                <!--<form method="POST" action="">
+                    <div>Answer this question: <input type="text" name="password"></div>
+                    <div><input type="submit" name="submit"></div>
+                </form> -->
+                <div>No answer provided yet.</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <form method="POST" action="">
+        <div>Edit this post: <input type="text" name="password"></div>
+        <div><input type="submit" name="submit"></div>
+    </form>
+</body>
+</html>
