@@ -1,12 +1,17 @@
-from flask import Flask
 from flask_pymongo import pymongo
 import configparser
 
-config = configparser.ConfigParser()
-config.read('config.ini')
+def get_listings_collection():
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    CONNECTION_STRING = config['mongodb']['CONNECTION_STRING']
 
-CONNECTION_STRING = config['mongodb']['CONNECTION_STRING']
-client = pymongo.MongoClient(CONNECTION_STRING)
-
-db = client.get_database('flask_mongodb_atlas')
-user_collection = pymongo.collection.Collection(db, 'user_collection')
+    try:
+        client = pymongo.MongoClient(CONNECTION_STRING)
+        db = client.get_database('laigscrist')
+        return pymongo.collection.Collection(db, 'listings')
+    except pymongo.errors.ConnectionFailure as e:
+        print("MongoDB server connection error.")
+        return
+    except Exception as e:
+        print(e)

@@ -1,7 +1,8 @@
 from flask import Flask, render_template
-from db import db
+from db import get_listings_collection
 
 app = Flask(__name__)
+listings = get_listings_collection()
 
 @app.route('/')
 def index():
@@ -30,8 +31,8 @@ def listing_answer(id, qid):
 #test to insert data to the data base
 @app.route("/api/db_test")
 def test():
-    db.collection.insert_one({"name": "John"})
-    return "Connected to the database!"
+    listings.insert_one({"title": "A thing I want to sell", "description": "I want to sell this"})
+    return "Conection is ok"
 
 if __name__ == '__main__':
     app.run(port=3000)
