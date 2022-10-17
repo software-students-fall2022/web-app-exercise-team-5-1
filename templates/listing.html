@@ -17,10 +17,6 @@
             {% if question.answer is defined %}
                 <div>Answer: {{question.answer.body}}</div>
             {% else %}
-                <!--<form method="POST" action="">
-                    <div>Answer this question: <input type="text" name="password"></div>
-                    <div><input type="submit" name="submit"></div>
-                </form> -->
                 <div>No answer provided yet.</div>
             {% endif %}
         </div>
@@ -28,7 +24,7 @@
     </div>
 
     <form method="POST" action="">
-        <div>Edit this post: <input type="text" name="password"></div>
+        <div>Edit this post or answer a question: <input type="text" name="password"></div>
         <div><input type="submit" name="submit"></div>
     </form>
 </body>

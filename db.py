@@ -1,11 +1,9 @@
 from flask_pymongo import pymongo
-import configparser
+from dotenv import dotenv_values
 
 def get_listings_collection():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    CONNECTION_STRING = config['mongodb']['CONNECTION_STRING']
-
+    config = dotenv_values(".env")
+    CONNECTION_STRING = config["MONGODB_URI"]
     try:
         client = pymongo.MongoClient(CONNECTION_STRING)
         db = client.get_database('laigscrist')
