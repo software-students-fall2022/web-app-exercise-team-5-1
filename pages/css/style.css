@@ -1,0 +1,171 @@
+*{
+    padding : 0;
+    margin : 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 4px;               /* width of the page scrollbar */
+    height: 8px;              /* height of the horizontal scrollbar */
+}
+  
+::-webkit-scrollbar-track {
+background: black;        /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid black;  /* creates padding around scroll thumb */
+}
+
+.main{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    
+    
+}
+.logo{
+    display: flex;
+    color: white;
+    padding-top: 3vh;
+    font-size: 35px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 45px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+nav ul li a:hover{
+    color: #f9004d;
+    transition: .4s;
+}
+
+#searchBar{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    padding: 10px 25px;
+    
+}
+
+#searchIcon{
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    height: 100%;
+    border: none;
+    border-radius:5px;
+    
+}
+
+nav ul li input[type=text] {
+    border: none;
+    font-size: 17px;
+    background-color: black;
+    color: aliceblue;
+    
+}
+
+.btn{
+    background-color: #f9004d;
+    color:white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    padding: 10px 25px;
+    border-radius:30px;
+    transition: tranform .4s;
+}
+
+.btn:hover
+{
+    color: black;
+    transition: .4s;
+}
+
+.categories{
+
+    display: flex;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
+    padding-left: 8%;
+    color: white;
+
+}
+
+
+
+.itemArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+ul.items{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: auto;
+    list-style: none;
+    height: 300px;
+
+}
+
+ul.items li{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 200px;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+ul.items li a{
+    display: flex;
+    flex-direction: column;
+
+}
+
+ul.items li a p{
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+img{
+    max-width: 200px;
+    max-height: 250px;
+}
