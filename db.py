@@ -10,6 +10,7 @@ def get_listings_collection():
         return pymongo.collection.Collection(db, 'listings')
     except pymongo.errors.ConnectionFailure as e:
         print("MongoDB server connection error.")
-        return
     except Exception as e:
         print(e)
+
+listings_collection = get_listings_collection()
