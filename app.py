@@ -44,13 +44,6 @@ def listing(id):
             return "No listing found with this id."
         except InvalidId:
             return "The given id is invalid."
-    
-    elif request.method == "POST":
-        # validate listing update authentication before redirecting to editing page
-        # TODO: implement listing update authetication
-        data = request.form
-        print(data)
-        return redirect(f'/listing/{id}/update')
 
 @app.route('/listing/<id>/update')
 def listing_update(id):
