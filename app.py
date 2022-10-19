@@ -15,7 +15,7 @@ app = Flask(__name__)
 app.add_url_rule('/', view_func=index)
 app.add_url_rule('/listing/create', methods=["GET", "POST"], view_func=listing_create)
 app.add_url_rule('/listing/<id>', methods=["GET", "POST"], view_func=listing)
-app.add_url_rule('/listing/<id>/update', view_func=listing_update)
+app.add_url_rule('/listing/<id>/update', methods=["GET", "POST"], view_func=listing_update)
 app.add_url_rule('/listing/<id>/ask', view_func=listing_ask)
 app.add_url_rule('/listing/<id>/answer', view_func=listing_answer)
 
