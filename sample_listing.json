@@ -13,17 +13,9 @@
     "images": [],
     "author": "Harrison",
     "password": {
-        "hash": {
-            "$binary": {
-                "base64": "JDJiJDEyJE1TYi8zOVJORmF2OU5IeUpCbU1Qd3VpRGVRNWFhek9lWXRnSnprSWxkbVYyRjB3MnV5Qzky",
-                "subType": "00"
-            }
-        },
-        "salt": {
-            "$binary": {
-                "base64": "JDJiJDEyJE1TYi8zOVJORmF2OU5IeUpCbU1Qd3U=",
-                "subType": "00"
-            }
+        "$binary": {
+            "base64": "JDJiJDEyJE1TYi8zOVJORmF2OU5IeUpCbU1Qd3VpRGVRNWFhek9lWXRnSnprSWxkbVYyRjB3MnV5Qzky",
+            "subType": "00"
         }
     },
     "questions": [
