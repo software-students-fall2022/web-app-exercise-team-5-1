@@ -22,7 +22,7 @@ def listing_object_from_params(form, files):
     # Check that all required attributes are present in the request.
     reqs = ["title", "desc", "price", "author", "password"]
     for req in reqs:
-        if not form.__contains__(req):
+        if not req in form:
             raise Exception(f"\"{req}\" attribute must be present.")
 
     # Handle hashing and salting of provided password.
