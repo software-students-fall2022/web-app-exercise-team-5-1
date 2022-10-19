@@ -8,8 +8,6 @@
 
 body{
     background-color: black;
-    height: 100%;
-    width: 100%;
     background-size: cover;
 }
 
@@ -66,7 +64,7 @@ img{
 
 
 nav{
-    padding: 5vh 4%;
+    padding: 2vh 4%;
     display: flex;
     align-items: center;
 }
@@ -96,8 +94,9 @@ input[type=text] {
 }
 
 .item-container{
-    display: flex;
-    max-height: 100%;
+
+    overflow-y: scroll;
+    scrollbar-width: 10px;
 }
 
 .item-list{
@@ -105,16 +104,18 @@ input[type=text] {
     flex-direction: column;
 
     overflow-x: auto;
+
+    max-height: 100%;
+
     list-style: none;
 
-    height: 100vh;
-    width: 100vw;
+    width: 100%;
 
 }
 
 .item{
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2.5vh 5vw;
@@ -132,9 +133,10 @@ input[type=text] {
 }
 
 
+
 /* scroll bar animation*/
 ::-webkit-scrollbar {
-    width: 2.5px;               /* width of the page scrollbar */
+    width: 5px;               /* width of the page scrollbar */
     height: 8px;              /* height of the horizontal scrollbar */
 }
   
