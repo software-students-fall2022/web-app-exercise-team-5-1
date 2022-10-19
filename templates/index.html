@@ -14,9 +14,18 @@
             <div>Listed by {{listing.author}}</div>
             <div>Price is {{listing.price}}</div>
             <div>Description: {{listing.description}}</div>
-            <div><a href="/listing/{{listing.id}}">See more</a></div>
+            <div><a href="/listing/{{listing._id}}">See more</a></div>
         </div>
         {% endfor %}
+    </div>
+
+    <div>
+        {% if prev_page != 0 %}
+        <a href="/?page={{prev_page}}">Previous page</a>
+        {% endif %}
+        {% if next_page != -1 %}
+        <a href="/?page={{next_page}}">Next page</a>
+        {% endif %}
     </div>
 </body>
 </html>
