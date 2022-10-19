@@ -15,6 +15,9 @@
             <div>Price is {{listing.price}}</div>
             <div>Description: {{listing.description}}</div>
             <div><a href="/listing/{{listing._id}}">See more</a></div>
+            {% if 'image' in listing %}
+            <img src="data:;base64,{{listing.image}}"/>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

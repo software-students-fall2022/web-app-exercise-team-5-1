@@ -4,6 +4,8 @@ from bson.errors import InvalidId
 import bcrypt
 from db import listings_collection
 
+# TODO: figure out user experience of how to update multiple images
+
 def listing_update(id):
     try:
         listing_cursor = listings_collection.find({'_id': ObjectId(id)})
