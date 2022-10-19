@@ -35,18 +35,16 @@ def listing_object_from_params(form, files):
     # Handle hashing and salting of provided password.
     hash = bcrypt.hashpw(form.get("password").encode('utf8'), bcrypt.gensalt())
 
-    # Take image and upload
+    # Take images and convert them into binary to upload
     image_binaries = []
-    print('images' in files)
-    print(files['images'].filename != '')
-    if ('images' in files) and files['images'].filename != '':
-        print('here')
+    if ('images' in files):
         # a file was uploaded
-        image = files['images']
-        if image and allowed_file(image.filename):
-            image_binaries = [image.read()]
-        else:
-            raise ValueError("Invalid file type uploaded.")
+        images = files.getlist('images')
+        for image in images:
+            if image.filename != '' and allowed_file(image.filename):
+                image_binaries.append(image.read())
+            else:
+                raise ValueError("Invalid file type uploaded.")
     
     # Return database-ready listing. ValueErrors may still arise in this section.
     return {
