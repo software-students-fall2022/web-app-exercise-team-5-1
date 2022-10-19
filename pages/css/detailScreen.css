@@ -1,0 +1,49 @@
+.body{
+    display: flex;
+    height: 100%;
+}
+.detail-container
+{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-carousel
+{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.horizontal-carousel img
+{
+
+    padding-right: 10%;
+    width: auto;
+    height: 500px;
+}
+
+.image-container
+{
+    padding-top: 10%;
+}
+
+#qa-container{
+    padding-top: 10%;
+    
+}
+
+
+#edit-container{
+    padding-top: 10%;
+
+    
+}
+
+#edit-container input[type = text]
+{
+    background-color: black;
+    color: white;
+
+}

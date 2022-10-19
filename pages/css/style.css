@@ -30,8 +30,8 @@ body{
 }
 
 img{
-    max-width: 200px;
-    max-height: 250px;
+    max-width: auto;
+    max-height: 500px;
 }
 
 .center-flex{
@@ -39,12 +39,14 @@ img{
     align-items: center;
     justify-content: center;
 
-    padding-left: 8%;
-    padding-right: 8%;
 }
-
+/* paddings */ 
 .bottom-padding{
     padding: 1%;
+}
+.h-padding-8{
+    padding-left: 8%;
+    padding-right: 8%;
 }
 /* colors */
 
