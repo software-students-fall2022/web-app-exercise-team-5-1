@@ -45,15 +45,11 @@ def listing_update(id):
 def edit_listing(id, form, files):
     newlistinginfo = {}
     # Check each field and see if the form data has a value for it. If so, update the database.
-    # TODO: Use "description" instaed of "desc" on HTML pages so this can become a loop.
-    if "title" in form:
-        newlistinginfo["title"] = form.get("title")
-    if "desc" in form:
-        newlistinginfo["description"] = form.get("desc")
+    for param in ["title", "description", "author"]:
+        if "author" in form:
+            newlistinginfo[param] = form.get(param)
     if "price" in form:
         newlistinginfo["price"] = round(float(form.get("price")), 2)
-    if "author" in form:
-        newlistinginfo["author"] = form.get("author")
 
     # Update the listing in the database and redirect to that listing page.
     listings_collection.update_one({'_id': ObjectId(id)}, {'$set': newlistinginfo})

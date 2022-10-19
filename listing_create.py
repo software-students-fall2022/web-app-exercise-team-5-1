@@ -23,7 +23,7 @@ def listing_create():
 
 def listing_object_from_params(form, files):
     # Check that all required attributes are present in the request.
-    reqs = ["title", "desc", "price", "author", "password"]
+    reqs = ["title", "description", "price", "author", "password"]
     for req in reqs:
         if req not in form:
             raise ValueError(f"\"{req}\" attribute must be present.")
@@ -36,7 +36,7 @@ def listing_object_from_params(form, files):
     return {
         "timestamp": int(time.time()),
         "title": form.get("title"),
-        "description": form.get("desc"),
+        "description": form.get("description"),
         "price": round(float(form.get("price")), 2),
         "images": [], # TODO: Handle images.
         "author": form.get("author"),
