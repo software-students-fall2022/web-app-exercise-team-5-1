@@ -2,6 +2,10 @@ from flask import render_template, request, redirect, url_for
 from db import listings_collection
 import time
 import bcrypt
+from bson.binary import Binary
+from bson import BSON
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def listing_create():
     if request.method == "POST":
@@ -30,6 +34,19 @@ def listing_object_from_params(form, files):
 
     # Handle hashing and salting of provided password.
     hash = bcrypt.hashpw(form.get("password").encode('utf8'), bcrypt.gensalt())
+
+    # Take image and upload
+    image_binaries = []
+    print('images' in files)
+    print(files['images'].filename != '')
+    if ('images' in files) and files['images'].filename != '':
+        print('here')
+        # a file was uploaded
+        image = files['images']
+        if image and allowed_file(image.filename):
+            image_binaries = [image.read()]
+        else:
+            raise ValueError("Invalid file type uploaded.")
     
     # Return database-ready listing. ValueErrors may still arise in this section.
     return {
@@ -37,8 +54,12 @@ def listing_object_from_params(form, files):
         "title": form.get("title"),
         "description": form.get("description"),
         "price": round(float(form.get("price")), 2),
-        "images": [], # TODO: Handle images.
+        "images": image_binaries,
         "author": form.get("author"),
         "password": hash,
         "questions": []
     }
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

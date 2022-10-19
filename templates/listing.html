@@ -8,6 +8,9 @@
 <body>
     <h1>{{listing.title}}</h1>
     <h3>{{listing.author}}</h3>
+    {% for image in images %}
+    <img src="data:;base64,{{image}}"/>
+    {% endfor %}
     <div>{{listing.description}}</div>
     <div>
         {% for question in questions %}
