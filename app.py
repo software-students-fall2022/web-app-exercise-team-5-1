@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # Instead of using annotations, link routes to methods in other files.
 app.add_url_rule('/', view_func=index)
-app.add_url_rule('/newlisting', view_func=listing_create)
+app.add_url_rule('/listing/create', methods=["GET", "POST"], view_func=listing_create)
 app.add_url_rule('/listing/<id>', methods=["GET", "POST"], view_func=listing)
 app.add_url_rule('/listing/<id>/update', view_func=listing_update)
 app.add_url_rule('/listing/<id>/ask', view_func=listing_ask)
