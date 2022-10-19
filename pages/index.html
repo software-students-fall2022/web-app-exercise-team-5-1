@@ -8,47 +8,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <body>
-    <div class="main">
-        <h2 class = "logo">Laigscrist</h2>
+    <div>
+        <h2 class = "logo center-flex">Laigscrist</h2>
         <nav>
-            <ul>
-                <li><div id = "searchBar"><input type="text" placeholder="Search.."><a href = "#"><img src = "image/search-icon.png" id = "searchIcon"></a></div></li>
-                <li><a href="#">Your Listings</a></li>
-                <li><a href="#" class = "btn">Sell</a></li>
-            </ul>
+            <div id = "searchBar" >
+                <input type="text" class ="black-background" placeholder="Search..">
+                <a href = "#">
+                    <img src = "image/search-icon.png" id = "searchIcon">
+                </a>
+            </div>
+            <div>
+                <a href="#" class = "button bold-text red-background">Sell</a>
+            </div>
         </nav>
 
-        <h2 class = "categories" >Electronics</h2>
-        <div class = "itemArea">
-            <ul class = "items">
-                <li><a href = "detailScreen.html"><img src = "https://picsum.photos/200/300?random = 1"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/300/400?random = 2"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/300?random = 3"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 4"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 5"><p>item name</p></a></li>
+        <!-- <h2 class = "categories" >Electronics</h2> -->
+        <div class = "item-container">
+            <ul class = "item-list">
+                <li class = "item">
+                        <img class = "item-image" src = "https://picsum.photos/900/900?random = 1">
+                        <div id = "info">
+                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                            <div class = "white bottom-padding">{{listing.price}}</div>
+                            
+                            <div>
+                                <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                </li>
+                <li class = "item">
+                    <img class = "item-image" src = "https://picsum.photos/400/400?random = 2">
+                    <div id = "info">
+                        <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                        <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                        <div class = "white bottom-padding">{{listing.price}}</div>
+                        <div>
+                            <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                        </div>
+                    </div>
+                </li>
+                <li class = "item">
+                    <img class = "item-image" src = "https://picsum.photos/400/400?random = 3">
+                    <div id = "info">
+                        <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                        <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                        <div class = "white bottom-padding">{{listing.price}}</div>
+                        <div>
+                            <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                        </div>
+                    </div>
+                </li>
+                <li class = "item">
+                    <img class = "item-image" src = "https://picsum.photos/400/500?random = 4">
+                    <div id = "info">
+                        <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                        <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                        <div class = "white bottom-padding">{{listing.price}}</div>
+                        <div>
+                            <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                        </div>
+                    </div>
+                </li>
+                <li class = "item">
+                    <img class = "item-image" src = "https://picsum.photos/700/400?random = 5">
+                    <div id = "info">
+                        <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                        <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                        <div class = "white bottom-padding">{{listing.price}}</div>
+                        <div>
+                            <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                        </div>
+                    </div>
+                </li>
+                <li class = "item">
+                    <img class = "item-image" src = "https://picsum.photos/400/900?random = 6">
+                    <div id = "info">
+                        <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                        <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                        <div class = "white bottom-padding">{{listing.price}}</div>
+                        <div>
+                            <a href="/listing/{{listing.id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
-        <h2 class = "categories" >Furniture</h2>
-        <div class = "itemArea">
-            <ul class = "items">
-                <li><a href = "#"><img src = "https://picsum.photos/200/300?random = 6"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/300/400?random = 7"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/300?random = 8"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 9"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 10"><p>item name</p></a></li>
-            </ul>
-        </div>
-        <h2 class = "categories" >Decors</h2>
-        <div class = "itemArea">
-            <ul class = "items">
-                <li><a href = "#"><img src = "https://picsum.photos/200/300?random = 11"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/300/400?random = 12"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/300?random = 13"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 14"><p>item name</p></a></li>
-                <li><a href = "#"><img src = "https://picsum.photos/200/500?random = 15"><p>item name</p></a></li>
-            </ul>
-        </div>
 
     </div>
 
