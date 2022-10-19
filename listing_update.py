@@ -17,7 +17,7 @@ def listing_update(id):
         # Check password was submitted and correct before changing the listing in any way.
         if "password" not in request.form:
             return render_template('error.html', message = "You must submit a passcode to edit this listing."), 401
-        if not bcrypt.checkpw(request.form.get("password").encode('utf8'), listing["password"]["hash"]):
+        if not bcrypt.checkpw(request.form.get("password").encode('utf8'), listing["password"]):
             return render_template('error.html', message = "The provided passcode is not valid for this listing."), 401
         
         # Check value of submit button. (TODO: Maybe there is a better way to do this?)

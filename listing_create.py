@@ -29,8 +29,7 @@ def listing_object_from_params(form, files):
             raise ValueError(f"\"{req}\" attribute must be present.")
 
     # Handle hashing and salting of provided password.
-    salt = bcrypt.gensalt()
-    hash = bcrypt.hashpw(form.get("password").encode('utf8'), salt)
+    hash = bcrypt.hashpw(form.get("password").encode('utf8'), bcrypt.gensalt())
     
     # Return database-ready listing. ValueErrors may still arise in this section.
     return {
@@ -40,9 +39,6 @@ def listing_object_from_params(form, files):
         "price": round(float(form.get("price")), 2),
         "images": [], # TODO: Handle images.
         "author": form.get("author"),
-        "password": {
-            "hash": hash,
-            "salt": salt,
-        },
+        "password": hash,
         "questions": []
     }
