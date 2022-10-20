@@ -30,20 +30,21 @@
 }
 
 #qa-container{
+    padding-top: 10%;  
+}
+
+#contact-container{
     padding-top: 10%;
-    
+}
+
+#contact-container > *{
+    color: white;
 }
 
 
 #edit-container{
     padding-top: 10%;
-
+    padding-bottom: 100px;
     
 }
 
-#edit-container input[type = text]
-{
-    background-color: black;
-    color: white;
-
-}
