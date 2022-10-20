@@ -126,7 +126,11 @@ input[type=text] {
 }
 
 .item-image{
-    width: 50vw;
+    display: block;
+    max-width:80vw;
+    max-height:50vh;
+    width: auto;
+    height: auto;
 }
 
 #info{
