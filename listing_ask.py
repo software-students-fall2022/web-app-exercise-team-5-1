@@ -5,7 +5,7 @@ import time
 from db import listings_collection
 
 def listing_ask(id):
-    if request.method != "POST":
+    if request.method == "GET":
         # Request method is GET, display the form for editing and do not run below code.
         return render_template('listing_ask.html')
     try:
