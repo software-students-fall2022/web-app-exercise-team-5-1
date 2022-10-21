@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing - {{listing.title}}</title>
+</head>
+<body>
+    <h1>{{listing.title}}</h1>
+    <h3>{{listing.author}}</h3>
+    {% for image in images %}
+    <img src="data:;base64,{{image}}"/>
+    {% endfor %}
+    <div>{{listing.description}}</div>
+    <div>
+        {% for question in questions %}
+        <div>
+            <div>{{question.body}}</div>
+            <div>Asked by {{question.author}}</div>
+            {% if question.answer is defined %}
+                <div>Answer: {{question.answer.body}}</div>
+            {% else %}
+                <div>No answer provided yet.</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

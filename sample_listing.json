@@ -1,0 +1,56 @@
+{
+    "_id": {
+        "$oid": "634f028fa11c10159ae12607"
+    },
+    "timestamp": {
+        "$numberInt": "1666122383"
+    },
+    "title": "Marble Inlay Hexagon Table - Vintage, nice condition",
+    "description": "For sale, Marble inlay table, hexagon shaped. Dimensions: 26.5\" at widest point, 23\" at narrowest point, 17\" tall. Located in Darien. $75. Thanks for looking! Text is best. Local pickup only!",
+    "price": {
+        "$numberDouble": "75.0"
+    },
+    "images": [],
+    "author": "Harrison",
+    "password": {
+        "$binary": {
+            "base64": "JDJiJDEyJE1TYi8zOVJORmF2OU5IeUpCbU1Qd3VpRGVRNWFhek9lWXRnSnprSWxkbVYyRjB3MnV5Qzky",
+            "subType": "00"
+        }
+    },
+    "questions": [
+        {
+            "timestamp": {
+                "$numberInt": "1666122383"
+            },
+            "author": "Bruce Wu",
+            "body": "What is the capacity of the blender?",
+            "answer": {
+                "timestamp": {
+                    "$numberInt": "1666122383"
+                }, 
+                "body": "The blender can hold about 4 cups."
+            }
+        },
+        {
+            "timestamp": {
+                "$numberInt": "1666122383"
+            },
+            "author": "Evan Huang",
+            "body": "Can I use this blender for hot food items?"
+        },
+        {
+            "timestamp": {
+                "$numberInt": "1666122383"
+            },
+            "author": "Laura Lourenco",
+            "body": "Is there storage for the cord?",
+            "answer": {
+                "timestamp": {
+                    "$numberInt": "1666122383"
+                }, 
+                "body": "There is a channel underneath the blender that allows you to wrap about four inches of the cord in it."
+            }
+        }
+    ]
+}

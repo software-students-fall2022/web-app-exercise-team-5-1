@@ -1,0 +1,18 @@
+Update listing page, where an existing listing can be edited.
+
+<form action="#" method="post" enctype="multipart/form-data">
+    <label for="title">Title</label><br>
+    <input type="text" id="title" name="title" value="{{listing.title}}" required><br>
+    <label for="description">Description</label><br>
+    <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea><br>
+    <label for="price">Price</label><br>
+    <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required><br>
+    <label for="images">Images</label><br>
+    <input type="file" id="images" name="images"><br>
+    <label for="author">Author</label><br>
+    <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
+    <label for="password">Listing PIN</label><br>
+    <input type="password" id="password" name="password" required><br>
+    <input type="submit" name="action" value="Edit Listing">
+    <input type="submit" name="action" value="Delete Listing">
+</form>
