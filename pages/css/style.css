@@ -117,7 +117,7 @@ input[type=text] {
     scrollbar-width: 10px;
 }
 
-.item-list{
+#listings{
 
     flex-direction: column;
 

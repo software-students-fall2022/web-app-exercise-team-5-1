@@ -3,7 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>View Listings</title>
+    <link rel = "stylesheet" type = "text/css" href = "/pages/css/style.css">
 </head>
+<body>
+    <div style="height: 99vh; display: flex; flex-direction: column;">
+        <h2 class = "logo center-flex">Laigscrist</h2>
+        <nav>
+            <div id = "searchBar" >
+
+                    <input type="text" class ="black-background" placeholder="Search..">
+                    <a href = "#">
+                        <img src = "/pages/image/search-icon.png" id = "searchIcon">
+                    </a>
+
+                
+            </div>
+            <div>
+                <a href="#" class = "button bold-text red-background" style="margin-left: 10%;">Sell</a>
+            </div>
+        </nav>
+
+        <div class = "item-container">
+            <div id = "listings">
+                {% for listing in listings %}
+                <div class = "item">
+                    
+                    {% if 'image' in listing %}
+                        <img class = "item-image" src="data:;base64,{{listing.image}}"/>
+                    {% endif %}
+                        
+                        <div id = "info">
+                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                            <div class = "white bottom-padding">{{listing.price}}</div>
+                            <!-- <div class = "white bottom-padding">{{listing.description}}</div> -->
+                        
+                            <div>
+                                <a href="/listing/{{listing._id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        
+        <!-- <div>
+            {% if prev_page != 0 %}
+            <a href="/?page={{prev_page}}">Previous page</a>
+            {% endif %}
+            {% if next_page != -1 %}
+            <a href="/?page={{next_page}}">Next page</a>
+            {% endif %}
+        </div> -->
+
+    </div>
+
+</body>
+</html>
+
+
+<!-- 
 <body>
     Home page, where all listings will show up. Will also allow you to search.
 
@@ -30,5 +90,4 @@
         <a href="/?page={{next_page}}">Next page</a>
         {% endif %}
     </div>
-</body>
-</html>
+</body> -->
