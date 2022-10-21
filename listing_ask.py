@@ -7,7 +7,7 @@ from db import listings_collection
 def listing_ask(id):
     if request.method == "GET":
         # Request method is GET, display the form for editing and do not run below code.
-        return render_template('listing_ask.html')
+        return render_template('listing_ask.html', id = id)
     try:
         # Request method is POST, process form data.
         if not ("author" in request.form and "question" in request.form):
@@ -28,9 +28,7 @@ def listing_ask(id):
             return render_template('error.html', message = "No listing found with this id."), 404
 
         # Otherwise the operation was successful, redirect user to the listing page for the listing they just asked a question on.
-        return redirect(url_for("listing", id=str(id)))
-    except StopIteration:
-        return render_template('error.html', message = "No listing found with this id."), 404
+        return redirect(url_for("listing"))
     except InvalidId:
         return render_template('error.html', message = "The given id is invalid."), 400
     except TypeError as te:

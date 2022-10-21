@@ -8,12 +8,15 @@ LISTINGS_PER_PAGE = 5 # for testing, probably will be 20 or something in prod
 def index():
     try:
         page = int(request.args["page"]) if "page" in request.args.keys() else 1
-        listings_cursor = listings_collection.find({}, ["title", "price", "description", "author", "images"]) \
+        search = {"$text": {"$search": request.args["search"]}} \
+                        if "search" in request.args.keys() and request.args["search"] != '' \
+                        else {}
+        listings_cursor = listings_collection.find(search, ["title", "price", "description", "author", "images"]) \
                                              .sort("timestamp", pymongo.DESCENDING) \
                                              .skip((page - 1) * LISTINGS_PER_PAGE) \
                                              .limit(LISTINGS_PER_PAGE + 1)
     except ValueError:
-        return render_template('error.html', message = "Bad page query."), 404
+        return render_template('error.html', message = "Bad query."), 404
     
     listings = list(listings_cursor)
     for listing in listings:
@@ -23,10 +26,6 @@ def index():
     listings_cursor.close()
 
     num_listings = len(listings)
-
-    if num_listings == 0:
-        # there are no listings at this page number
-        return render_template('error.html', message = "No listings at this page query")
 
     del listings[LISTINGS_PER_PAGE:]
     next_page = page + 1 if num_listings > LISTINGS_PER_PAGE else -1

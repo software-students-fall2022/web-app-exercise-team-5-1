@@ -37,7 +37,7 @@ def listing_object_from_params(form, files):
 
     # Take images and convert them into binary to upload
     image_binaries = []
-    if ('images' in files):
+    if ('images' in files) and (request.files['images'].filename != ''):
         # a file was uploaded
         images = files.getlist('images')
         for image in images:
