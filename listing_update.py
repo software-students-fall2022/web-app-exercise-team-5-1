@@ -4,8 +4,6 @@ from bson.errors import InvalidId
 import bcrypt
 from db import listings_collection
 
-# TODO: figure out user experience of how to update multiple images
-
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def listing_update(id):
