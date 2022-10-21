@@ -12,7 +12,7 @@ def listing_update(id):
         listing = listing_cursor.next()
         listing_cursor.close()
 
-        if request.method != "POST":
+        if request.method == "GET":
             # Request method is GET, display the form for editing and do not run below code.
             return render_template('listing_update.html', listing = listing)
         
