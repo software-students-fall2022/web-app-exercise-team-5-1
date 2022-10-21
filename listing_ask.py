@@ -13,13 +13,6 @@ def listing_ask(id):
         if not ("author" in request.form and "question" in request.form):
             return render_template('error.html', message = "Author and question are both required attributes."), 400
 
-        # Not actually using this data, but will throw an error if selected question does not exist in the database.
-        # We don't want to be adding questions for nonexistent listings, since I think MongoDB would allow it.
-        # There's probably a better way to do this but this is the best I could think of for now.
-        listing_cursor = listings_collection.find({'_id': ObjectId(id)})
-        listing_cursor.next()
-        listing_cursor.close()
-        
         # Generate question in database-ready format.
         question = {
             "timestamp": int(time.time()),
@@ -28,9 +21,13 @@ def listing_ask(id):
         }
 
         # Push (append) the question onto the array of questions stored in the database.
-        listings_collection.update_one({'_id': ObjectId(id)}, {'$push': {'questions': question}})
+        success = listings_collection.find_one_and_update({'_id': ObjectId(id)}, {'$push': {'questions': question}})
 
-        # Redirect user to the listing page for the listing they just asked a question on.
+        # If None is returned from find_one_and_update then the listing with given id does not exist in the database.
+        if success is None:
+            return render_template('error.html', message = "No listing found with this id."), 404
+
+        # Otherwise the operation was successful, redirect user to the listing page for the listing they just asked a question on.
         return redirect(url_for("listing", id=str(id)))
     except StopIteration:
         return render_template('error.html', message = "No listing found with this id."), 404
