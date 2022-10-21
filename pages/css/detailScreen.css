@@ -1,0 +1,50 @@
+.body{
+    display: flex;
+    height: 100%;
+}
+.detail-container
+{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-carousel
+{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.horizontal-carousel img
+{
+
+    padding-right: 10%;
+    width: auto;
+    height: 500px;
+}
+
+.image-container
+{
+    padding-top: 10%;
+}
+
+#qa-container{
+    padding-top: 10%;  
+}
+
+#contact-container{
+    padding-top: 10%;
+}
+
+#contact-container > *{
+    color: white;
+}
+
+
+#edit-container{
+    padding-top: 10%;
+    padding-bottom: 100px;
+    
+}
+
