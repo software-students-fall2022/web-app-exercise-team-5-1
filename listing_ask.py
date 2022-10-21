@@ -28,7 +28,7 @@ def listing_ask(id):
             return render_template('error.html', message = "No listing found with this id."), 404
 
         # Otherwise the operation was successful, redirect user to the listing page for the listing they just asked a question on.
-        return redirect(url_for("listing", id = id))
+        return redirect(url_for("listing"))
     except InvalidId:
         return render_template('error.html', message = "The given id is invalid."), 400
     except TypeError as te:

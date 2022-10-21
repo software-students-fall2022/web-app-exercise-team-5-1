@@ -14,7 +14,7 @@ def listing_update(id):
 
         if request.method == "GET":
             # Request method is GET, display the form for editing and do not run below code.
-            return render_template('listing_update.html', listing = listing, id = id)
+            return render_template('listing_update.html', listing = listing)
         
         # Check password was submitted and correct before changing the listing in any way.
         if "password" not in request.form:

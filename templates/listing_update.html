@@ -8,7 +8,7 @@
 </head>
 <body>
     Update listing page, where an existing listing can be edited.
-    <a href="/listing/{{id}}">Back</a>
+    <a href="/listing/{{listing._id}}">Back</a>
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="title">Title</label><br>
         <input type="text" id="title" name="title" value="{{listing.title}}" required><br>
@@ -22,8 +22,8 @@
         <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
         <label for="password">Listing PIN</label><br>
         <input type="password" id="password" name="password" required><br>
-        <button type="submit" formaction="/listing/{{id}}/update" formmethod="POST" name="update">Update Listing</button>
-        <button type="submit" formaction="/listing/{{id}}/delete" formmethod="POST" name="delete">Delete Listing</button>
+        <button type="submit" formaction="/listing/{{listing._id}}/update" formmethod="POST" name="update">Update Listing</button>
+        <button type="submit" formaction="/listing/{{listing._id}}/delete" formmethod="POST" name="delete">Delete Listing</button>
     </form>
 </body>
 </html>
