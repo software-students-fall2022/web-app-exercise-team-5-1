@@ -6,6 +6,7 @@
     <title>Listing - {{listing.title}}</title>
 </head>
 <body>
+    <a href="/">Home</a>
     <h1>{{listing.title}}</h1>
     <h3>{{listing.author}}</h3>
     {% for image in images %}
@@ -25,5 +26,7 @@
         </div>
         {% endfor %}
     </div>
+    <a href="/listing/{{id}}/update">Update this listing</a>
+    <a href="/listing/{{id}}/ask">Ask a question</a>
 </body>
 </html>

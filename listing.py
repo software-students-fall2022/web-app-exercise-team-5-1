@@ -18,7 +18,7 @@ def listing(id):
             for idx in range(len(images)):
                 images[idx] = b64encode(images[idx]).decode("utf-8")
             
-            return render_template('listing.html', listing = listing, questions = questions, images = images)
+            return render_template('listing.html', listing = listing, questions = questions, images = images, id = id)
         except StopIteration:
             # cursor.next did not find anything
             # no listing with the id was found
