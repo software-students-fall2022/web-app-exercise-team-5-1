@@ -5,7 +5,10 @@
     <title>View Listings</title>
 </head>
 <body>
-    Home page, where all listings will show up. Will also allow you to search.
+    <form method="GET">
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
 
     <div id="listings">
         {% for listing in listings %}
