@@ -1,18 +1,31 @@
-Update listing page, where an existing listing can be edited.
-<a href="/listing/{{id}}">Back</a>
-<form action="#" method="post" enctype="multipart/form-data">
-    <label for="title">Title</label><br>
-    <input type="text" id="title" name="title" value="{{listing.title}}" required><br>
-    <label for="description">Description</label><br>
-    <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea><br>
-    <label for="price">Price</label><br>
-    <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required><br>
-    <label for="images">Images</label><br>
-    <input type="file" id="images" name="images"><br>
-    <label for="author">Author</label><br>
-    <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
-    <label for="password">Listing PIN</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <button type="submit" formaction="/listing/{{id}}/update" formmethod="POST" name="update">Update Listing</button>
-    <button type="submit" formaction="/listing/{{id}}/delete" formmethod="POST" name="delete">Delete Listing</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laigscrist: Update {{listing.title}}</title>
+</head>
+<body>
+    Update listing page, where an existing listing can be edited.
+    <a href="/listing/{{id}}">Back</a>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" value="{{listing.title}}" required><br>
+        <label for="description">Description</label><br>
+        <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea><br>
+        <label for="price">Price</label><br>
+        <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required><br>
+        <label for="images">Images</label><br>
+        <input type="file" id="images" name="images"><br>
+        <label for="author">Author</label><br>
+        <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
+        <label for="password">Listing PIN</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit" formaction="/listing/{{id}}/update" formmethod="POST" name="update">Update Listing</button>
+        <button type="submit" formaction="/listing/{{id}}/delete" formmethod="POST" name="delete">Delete Listing</button>
+    </form>
+</body>
+</html>
+
+

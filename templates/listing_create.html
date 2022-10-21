@@ -1,17 +1,28 @@
-Create new listing page, where you will be allowed to input listing details to create a new listing.
-<a href="/">Home</a>
-<form action="#" method="post" enctype="multipart/form-data">
-    <label for="title">Title</label><br>
-    <input type="text" id="title" name="title" required><br>
-    <label for="description">Description</label><br>
-    <textarea rows="5" cols="64" id="description" name="description"></textarea><br>
-    <label for="price">Price</label><br>
-    <input type="number" min="0" step="0.01" id="price" name="price" required><br>
-    <label for="images">Images (.png, .jpg, .jpeg, or .gif)</label><br>
-    <input type="file" id="images" name="images" multiple="multiple"><br>
-    <label for="author">Author</label><br>
-    <input type="text" id="author" name="author" required><br>
-    <label for="password">Listing PIN</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laigscrist: Create Listing</title>
+</head>
+<body>
+    Create new listing page, where you will be allowed to input listing details to create a new listing.
+    <a href="/">Home</a>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="description">Description</label><br>
+        <textarea rows="5" cols="64" id="description" name="description"></textarea><br>
+        <label for="price">Price</label><br>
+        <input type="number" min="0" step="0.01" id="price" name="price" required><br>
+        <label for="images">Images (.png, .jpg, .jpeg, or .gif)</label><br>
+        <input type="file" id="images" name="images" multiple="multiple"><br>
+        <label for="author">Author</label><br>
+        <input type="text" id="author" name="author" required><br>
+        <label for="password">Listing PIN</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
