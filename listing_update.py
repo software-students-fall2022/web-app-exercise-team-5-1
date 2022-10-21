@@ -6,6 +6,8 @@ from db import listings_collection
 
 # TODO: figure out user experience of how to update multiple images
 
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
 def listing_update(id):
     try:
         listing_cursor = listings_collection.find({'_id': ObjectId(id)})
@@ -31,6 +33,20 @@ def listing_update(id):
         if "price" in request.form:
             newlistinginfo["price"] = round(float(request.form.get("price")), 2)
 
+        # if the user wants no change in image, upload nothing
+        # otherwise, they will have to reupload the entire set of images they want
+        if ('images' in request.files) and (request.files['images'].filename != ''):
+            # a file was uploaded
+            image_binaries = []
+            images = request.files.getlist('images')
+
+            for image in images:
+                if image.filename != '' and allowed_file(image.filename):
+                    image_binaries.append(image.read())
+                else:
+                    return render_template("error.html", message="Invalid file type uploaded.")
+            newlistinginfo["images"] = image_binaries
+
         # Update the listing in the database and redirect to that listing page.
         listings_collection.update_one({'_id': ObjectId(id)}, {'$set': newlistinginfo})
         return redirect(url_for("listing", id=id))
@@ -41,3 +57,8 @@ def listing_update(id):
         return render_template('error.html', message = "The given id is invalid."), 400
     except TypeError as te:
         return render_template('error.html', message = str(te)), 400
+
+# TODO: function definition repeated. create a util file
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
