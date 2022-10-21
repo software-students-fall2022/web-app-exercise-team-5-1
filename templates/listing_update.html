@@ -13,6 +13,6 @@ Update listing page, where an existing listing can be edited.
     <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
     <label for="password">Listing PIN</label><br>
     <input type="password" id="password" name="password" required><br>
-    <input type="submit" name="action" value="Edit Listing">
-    <input type="submit" name="action" value="Delete Listing">
+    <button type="submit" formaction="/listing/{{id}}/update" formmethod="POST" name="update">Update Listing</button>
+    <button type="submit" formaction="/listing/{{id}}/delete" formmethod="POST" name="delete">Delete Listing</button>
 </form>
