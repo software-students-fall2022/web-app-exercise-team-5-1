@@ -1,8 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from db import listings_collection
 import bcrypt
-
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+import utils
 
 def listing_create():
     if request.method == "POST":
@@ -38,7 +37,7 @@ def listing_object_from_params(form, files):
         # a file was uploaded
         images = files.getlist('images')
         for image in images:
-            if image.filename != '' and allowed_file(image.filename):
+            if utils.is_file_image(image.filename):
                 image_binaries.append(image.read())
             else:
                 raise ValueError("Invalid file type uploaded.")
@@ -53,7 +52,3 @@ def listing_object_from_params(form, files):
         "password": hash,
         "questions": []
     }
-
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
