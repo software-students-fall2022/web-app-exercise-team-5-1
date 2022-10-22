@@ -6,7 +6,7 @@ import utils
 
 def listing_delete(id):
     try:
-        listing = utils.get_listing_by_id()
+        listing = utils.get_listing_by_id(id)
 
         if not utils.check_listing_password(request.form, listing):
             return render_template('error.html', message = "The provided passcode is not valid for this listing."), 401
