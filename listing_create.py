@@ -1,9 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from db import listings_collection
-import time
 import bcrypt
-from bson.binary import Binary
-from bson import BSON
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
@@ -48,7 +45,6 @@ def listing_object_from_params(form, files):
     
     # Return database-ready listing. ValueErrors may still arise in this section.
     return {
-        "timestamp": int(time.time()),
         "title": form.get("title"),
         "description": form.get("description"),
         "price": round(float(form.get("price")), 2),

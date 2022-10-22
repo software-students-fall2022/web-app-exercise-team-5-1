@@ -1,7 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-import time
 from db import listings_collection
 
 def listing_ask(id):
@@ -15,7 +14,9 @@ def listing_ask(id):
 
         # Generate question in database-ready format.
         question = {
-            "timestamp": int(time.time()),
+            # ObjectIds have a timestamp embedded in them, so use that instead of a timestamp.
+            # Also acts as a unique identifier so that a question can be answered later.
+            "_id": ObjectId(),
             "author": request.form["author"],
             "body": request.form["question"]
         }
