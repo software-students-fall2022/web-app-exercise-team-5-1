@@ -21,7 +21,7 @@
             {% if question.answer is defined %}
                 <div>Answer: {{question.answer.body}}</div>
             {% else %}
-                <div>No answer provided yet.</div>
+                <div><a href="/listing/{{listing._id}}/answer/{{loop.index0}}">No answer provided yet.</a></div>
             {% endif %}
         </div>
         {% endfor %}

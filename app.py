@@ -19,7 +19,7 @@ app.add_url_rule('/listing/<id>', methods=["GET", "POST"], view_func=listing)
 app.add_url_rule('/listing/<id>/update', methods=["GET", "POST"], view_func=listing_update)
 app.add_url_rule('/listing/<id>/delete', methods=["POST"], view_func=listing_delete)
 app.add_url_rule('/listing/<id>/ask', methods=["GET", "POST"], view_func=listing_ask)
-app.add_url_rule('/listing/<id>/answer', view_func=listing_answer)
+app.add_url_rule('/listing/<id>/answer/<qid>', methods=["GET", "POST"], view_func=listing_answer)
 
 # Run the app.
 if __name__ == '__main__':
