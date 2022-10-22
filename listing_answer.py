@@ -10,7 +10,7 @@ def listing_answer(id, qid):
 
         if request.method == "GET":
             # Request method is GET, display the form for editing and do not run below code.
-            return render_template('listing_answer.html', listing = listing, qid = qid)
+            return render_template('listing_answer.html', id = id)
         
         if not utils.check_listing_password(request.form, listing):
             return render_template('error.html', message = "The provided passcode is not valid for this listing."), 401
