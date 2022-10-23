@@ -154,7 +154,18 @@ input[type=text] {
     text-align: center;
 }
 
+#page-navigation{
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
+#page-navigation > *{
+    color:white;
+    text-decoration: none;
+    text-align: center;
+}
 
 /* scroll bar animation*/
 ::-webkit-scrollbar {
