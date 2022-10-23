@@ -7,8 +7,10 @@
   <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
   <title>Laigscrist: Answer a question</title></head>
 <body> 
-  <a href="/listing/{{id}}">Back</a>
-  <section class="ask-question">
+  <section class="section-form">
+    <div class="back-button">
+      <a class="button-menu" href="/listing/{{id}}">Back</a>
+    </div>
     <div class="container-ask">
       <div class="header-container">
         <h1>Answer a Question</h1>
@@ -19,14 +21,14 @@
             <br>
             <label for="answer">Your answer:</label>
             <br>
-            <textarea rows="5" cols="64" id="answer" name="answer" required></textarea>
+            <textarea rows="5" cols="64" id="answer" name="answer" required></textarea><br>
             <br>          
           </div>
           <div class="field-container">
             <label for="password">Listing PIN</label>
             <br>
-            <input type="password" id="password" name="password" required><br>
-          </div>
+            <input type="password" id="password" name="password" required>
+            <br>          </div>
           <div class="button-container">
             <input class= "button-form" type="submit" value="Answer">
           </div>
