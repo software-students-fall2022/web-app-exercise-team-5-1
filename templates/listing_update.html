@@ -5,44 +5,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
-  <title>Edit Your Listing</title>
-</head>
+  <title>Laigscrist: Update {{listing.title}}</title></head>
 <body>
   <section class="ask-question">
+    <div class="back-button">
+      <a class="button-menu" href="/listing/{{listing._id}}">Back</a>
+    </div>
     <div class="container-ask">
       <div class="header-container">
         <h1>Edit Your Listing</h1>
       </div>
       <div class="form-container">
-        <form action="/ask" method="POST">
+        <form action="#" method="post" enctype="multipart/form-data">          
           <div class="field-container">
-            <label for="name">Product name:</label>
+            <label for="title">Product name:</label>
             <br>
-            <input type="text" name="name" id="name">
+            <input type="text" id="title" name="title" value="{{listing.title}}" required>
+            <br>
           </div>
           <div class="field-container">
             <label for="description">Product description:</label>
             <br>
-            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+            <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea>
+            <br>          
           </div>
           <div class="field-container">
             <label for="price">Price:</label>
             <br>
-            <input type="text" name="price" id="price">
+            <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required>
+            <br>          
           </div>
           <div class="field-container">
-            <label for="contact-info">Contact information:</label>
+            <label for="images">Images</label>
             <br>
-            <input type="text" name="contact-info" id="contact-info">
+            <input type="file" id="images" name="images" multiple>
+            <br>  
           </div>
           <div class="field-container">
-            <label for="pin">Add a listing pin:</label>
+            <label for="author">Author:</label>
             <br>
-            <input type="text" name="pin" id="pin">
+            <input type="text" id="author" name="author" value="{{listing.author}}" required>
+            <br>          
+          </div>
+          <div class="field-container">
+            <label for="password">Add a listing pin:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <br>          
           </div>
           <div class="button-container">
-            <input class= "button-form" type="submit" value="Edit">
-            <input class= "button-form" type="submit" value="Remove">
+            <button class="button-form" type="submit" formaction="/listing/{{listing._id}}/update" formmethod="POST" name="update">Update</button>
+            <button class="button-form" type="submit" formaction="/listing/{{listing._id}}/delete" formmethod="POST" name="delete">Delete</button>
           </div>
         </div>
     </div>
