@@ -3,7 +3,7 @@ import pymongo
 from db import listings_collection
 from base64 import b64encode
 
-LISTINGS_PER_PAGE = 5 # for testing, probably will be 20 or something in prod
+LISTINGS_PER_PAGE = 1 # for testing, probably will be 20 or something in prod
 
 def index():
     try:
@@ -29,4 +29,9 @@ def index():
 
     del listings[LISTINGS_PER_PAGE:]
     next_page = page + 1 if num_listings > LISTINGS_PER_PAGE else -1
-    return render_template('index.html', listings = listings, prev_page = page - 1, next_page = next_page)
+    return render_template(
+        'index.html',
+        listings = listings,
+        prev_page = page - 1,
+        next_page = next_page,
+        search = request.args["search"] if "search" in request.args.keys() else "")
