@@ -176,6 +176,7 @@ input[type=text] {
   padding: 10px 25px;
   border-radius:30px;
   font-weight: bold;
+  width: 225px;
   margin: 2em 2em;
 }
 
@@ -186,4 +187,10 @@ input, textarea {
   border: 1px solid #ccc;
   border-radius: 20px;
   resize: vertical;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+
 }

@@ -1,1 +1,37 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+  <title>Answer a Question</title>
+</head>
+<body>
+  <section class="ask-question">
+    <div class="container-ask">
+      <div class="header-container">
+        <h1>Answer a Question</h1>
+      </div>
+      <div class="form-container">
+        <form action="/ask" method="POST">
+          <span>
+            Question:
+          </span>
+          <span>
+            What is the meaning of life?
+          </span>
+          <div class="field-container">
+            <br>
+            <label for="answer">Your answer:</label>
+            <br>
+            <textarea name="answer" id="answer" cols="30" rows="5"></textarea>
+          </div>
+          <div class="button-container">
+            <input class= "button-form" type="submit" value="Answer">
+          </div>
+        </span>
+    </div>
+  </section>
+</body>
+</html>

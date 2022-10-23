@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+  <title>Edit Your Listing</title>
+</head>
+<body>
+  <section class="ask-question">
+    <div class="container-ask">
+      <div class="header-container">
+        <h1>Edit Your Listing</h1>
+      </div>
+      <div class="form-container">
+        <form action="/ask" method="POST">
+          <div class="field-container">
+            <label for="name">Product name:</label>
+            <br>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="field-container">
+            <br>
+            <label for="description">Product description:</label>
+            <br>
+            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+          </div>
+          <div class="field-container">
+            <label for="price">Price:</label>
+            <br>
+            <input type="text" name="price" id="price">
+          </div>
+          <div class="field-container">
+            <label for="contact-info">Contact information:</label>
+            <br>
+            <input type="text" name="contact-info" id="contact-info">
+          </div>
+          <div class="field-container">
+            <label for="pin">Add a listing pin:</label>
+            <br>
+            <input type="text" name="pin" id="pin">
+          </div>
+          <div class="button-container">
+            <input class= "button-form" type="submit" value="Edit">
+            <input class= "button-form" type="submit" value="Remove">
+          </div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>
