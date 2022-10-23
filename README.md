@@ -20,4 +20,5 @@ A platform to connect people offering goods and services with those who are inte
 
 ## Task boards
 
-See instructions. Delete this line and place a link to the task boards here.
+[Task Board for Sprint 1](https://github.com/orgs/software-students-fall2022/projects/13/views/1)
+[Task Board for Sprint 2](https://github.com/orgs/software-students-fall2022/projects/37/views/1)
