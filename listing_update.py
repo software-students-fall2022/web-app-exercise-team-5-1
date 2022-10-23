@@ -1,26 +1,18 @@
 from flask import render_template, request, redirect, url_for
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-import bcrypt
 from db import listings_collection
-
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+import utils
 
 def listing_update(id):
     try:
-        listing_cursor = listings_collection.find({'_id': ObjectId(id)})
-        listing = listing_cursor.next()
-        listing_cursor.close()
+        listing = utils.get_listing_by_id(id)
 
         if request.method == "GET":
             # Request method is GET, display the form for editing and do not run below code.
             return render_template('listing_update.html', listing = listing)
         
-        # Check password was submitted and correct before changing the listing in any way.
-        if "password" not in request.form:
-            return render_template('error.html', message = "You must submit a passcode to edit this listing."), 401
-
-        if not bcrypt.checkpw(request.form.get("password").encode('utf8'), listing["password"]):
+        if not utils.check_listing_password(request.form, listing):
             return render_template('error.html', message = "The provided passcode is not valid for this listing."), 401
         
         newlistinginfo = {}
@@ -39,7 +31,7 @@ def listing_update(id):
             images = request.files.getlist('images')
 
             for image in images:
-                if image.filename != '' and allowed_file(image.filename):
+                if utils.is_file_image(image.filename):
                     image_binaries.append(image.read())
                 else:
                     return render_template("error.html", message="Invalid file type uploaded.")
@@ -55,8 +47,3 @@ def listing_update(id):
         return render_template('error.html', message = "The given id is invalid."), 400
     except TypeError as te:
         return render_template('error.html', message = str(te)), 400
-
-# TODO: function definition repeated. create a util file
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
