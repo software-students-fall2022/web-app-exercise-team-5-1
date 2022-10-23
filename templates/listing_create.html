@@ -5,10 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
-  <title>Add a Listing</title>
+  <title>Laigscrist: Create Listing</title>
 </head>
 <body>
   <section class="ask-question">
+    <div class="back-button">
+      <a class="button-menu" href="/">Home</a>
+    </div>
     <div class="container-ask">
       <div class="header-container">
         <h1>Add a Listing</h1>
@@ -16,30 +19,40 @@
       <div class="form-container">
         <form action="/ask" method="POST">
           <div class="field-container">
-            <label for="name">Product name:</label>
+            <label for="title">Product name:</label>
             <br>
-            <input type="text" name="name" id="name">
+            <input type="text" name="title" id="title" required>
           </div>
           <div class="field-container">
             <br>
             <label for="description">Product description:</label>
             <br>
-            <textarea name="description" id="description" cols="30" rows="5"></textarea>
+            <textarea name="description" id="description" cols="30" rows="5" required></textarea>
           </div>
           <div class="field-container">
-            <label for="price">Price:</label>
             <br>
-            <input type="text" name="price" id="price">
+            <label for="price">Price</label>
+            <br>
+            <input type="number" min="0" step="0.01" id="price" name="price" required>
+            <br>
           </div>
           <div class="field-container">
-            <label for="contact-info">Contact information:</label>
             <br>
-            <input type="text" name="contact-info" id="contact-info">
+            <label for="images">Product image (.png, .jpg, .jpeg, or .gif)</label>
+            <br>
+            <input type="file" id="images" name="images" multiple><br>
           </div>
           <div class="field-container">
-            <label for="pin">Add a listing pin:</label>
             <br>
-            <input type="text" name="pin" id="pin">
+            <label for="author">Author:</label>
+            <br>
+            <input type="text" id="author" name="author" required><br>
+          </div>
+          <div class="field-container">
+            <br>
+            <label for="password">Add a listing pin:</label>
+            <br>
+            <input type="password" id="password" name="password" required><br>
           </div>
           <div class="button-container">
             <input class= "button-form" type="submit" value="Submit">

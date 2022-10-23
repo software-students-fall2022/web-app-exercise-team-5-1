@@ -194,3 +194,20 @@ input, textarea {
   justify-content: center;
 
 }
+
+.button-menu {
+  color:#f9004d;
+  background-color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  padding: 5px 5px;
+  border-radius:30px;
+  font-weight: bold;
+  width: 100px;
+  margin: 2em 2em;
+
+}
+
+.back-button {
+  display: flex;
+}
