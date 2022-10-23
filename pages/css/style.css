@@ -152,7 +152,7 @@ input[type=text] {
 
 
 /* ask a question */
-.ask-question {
+.section-form {
     display: flex;
     flex-direction: column;
     align-items: center;
