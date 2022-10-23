@@ -2,8 +2,6 @@ from flask import render_template, request, redirect, url_for
 from db import listings_collection
 import time
 import bcrypt
-from bson.binary import Binary
-from bson import BSON
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
