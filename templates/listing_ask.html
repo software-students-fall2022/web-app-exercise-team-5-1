@@ -1,9 +1,41 @@
-Question page, which will allow the user to post a question underneath a listing.
-
-<form action="#" method="post" enctype="multipart/form-data">
-    <label for="author">Your Name</label><br>
-    <input type="text" id="author" name="author" required><br>
-    <label for="question">Your Question</label><br>
-    <textarea rows="5" cols="64" id="question" name="question" required></textarea><br>
-    <input type="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+  <title>Laigscrist: Ask a question</title>
+</head>
+<body>
+  <section class="section-form">
+    <div class="back-button">
+      <a class="button-menu" href="/listing/{{id}}">Back</a>
+    </div>
+    <div class="container-ask">
+      <div class="header-container">
+        <h1>Ask a Question</h1>
+      </div>
+      <div class="form-container">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="field-container">
+            <label for="authot">Your name:</label>
+            <br>
+            <input type="text" id="author" name="author" required>
+            <br>          
+          </div>
+          <div class="field-container">
+            <br>
+            <label for="question">Your question:</label>
+            <br>
+            <textarea rows="5" cols="64" id="question" name="question" required></textarea>
+            <br>          
+          </div>
+          <div class="button-container">
+            <input class= "button-form" type="submit" value="Ask">
+          </div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>

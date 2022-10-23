@@ -7,6 +7,7 @@ from listing import listing
 from listing_update import listing_update
 from listing_ask import listing_ask
 from listing_answer import listing_answer
+from listing_delete import listing_delete
 
 # Create new Flask app.
 app = Flask(__name__)
@@ -16,8 +17,9 @@ app.add_url_rule('/', view_func=index)
 app.add_url_rule('/listing/create', methods=["GET", "POST"], view_func=listing_create)
 app.add_url_rule('/listing/<id>', methods=["GET", "POST"], view_func=listing)
 app.add_url_rule('/listing/<id>/update', methods=["GET", "POST"], view_func=listing_update)
+app.add_url_rule('/listing/<id>/delete', methods=["POST"], view_func=listing_delete)
 app.add_url_rule('/listing/<id>/ask', methods=["GET", "POST"], view_func=listing_ask)
-app.add_url_rule('/listing/<id>/answer', view_func=listing_answer)
+app.add_url_rule('/listing/<id>/answer/<qid>', methods=["GET", "POST"], view_func=listing_answer)
 
 # Run the app.
 if __name__ == '__main__':

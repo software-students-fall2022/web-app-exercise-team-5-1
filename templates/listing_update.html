@@ -1,18 +1,64 @@
-Update listing page, where an existing listing can be edited.
-
-<form action="#" method="post" enctype="multipart/form-data">
-    <label for="title">Title</label><br>
-    <input type="text" id="title" name="title" value="{{listing.title}}" required><br>
-    <label for="description">Description</label><br>
-    <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea><br>
-    <label for="price">Price</label><br>
-    <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required><br>
-    <label for="images">Images</label><br>
-    <input type="file" id="images" name="images"><br>
-    <label for="author">Author</label><br>
-    <input type="text" id="author" name="author" value="{{listing.author}}" required><br>
-    <label for="password">Listing PIN</label><br>
-    <input type="password" id="password" name="password" required><br>
-    <input type="submit" name="action" value="Edit Listing">
-    <input type="submit" name="action" value="Delete Listing">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+  <title>Laigscrist: Update {{listing.title}}</title></head>
+<body>
+  <section class="section-form">
+    <div class="back-button">
+      <a class="button-menu" href="/listing/{{listing._id}}">Back</a>
+    </div>
+    <div class="container-ask">
+      <div class="header-container">
+        <h1>Edit Your Listing</h1>
+      </div>
+      <div class="form-container">
+        <form action="#" method="post" enctype="multipart/form-data">          
+          <div class="field-container">
+            <label for="title">Product name:</label>
+            <br>
+            <input type="text" id="title" name="title" value="{{listing.title}}" required>
+            <br>
+          </div>
+          <div class="field-container">
+            <label for="description">Product description:</label>
+            <br>
+            <textarea rows="5" cols="64" id="description" name="description">{{listing.description}}</textarea>
+            <br>          
+          </div>
+          <div class="field-container">
+            <label for="price">Price:</label>
+            <br>
+            <input type="number" min="0" step="0.01" id="price" name="price" value="{{listing.price}}" required>
+            <br>          
+          </div>
+          <div class="field-container">
+            <label for="images">Images</label>
+            <br>
+            <input type="file" id="images" name="images" multiple>
+            <br>  
+          </div>
+          <div class="field-container">
+            <label for="author">Author:</label>
+            <br>
+            <input type="text" id="author" name="author" value="{{listing.author}}" required>
+            <br>          
+          </div>
+          <div class="field-container">
+            <label for="password">Add a listing pin:</label>
+            <br>
+            <input type="password" id="password" name="password" required>
+            <br>          
+          </div>
+          <div class="button-container">
+            <button class="button-form" type="submit" formaction="/listing/{{listing._id}}/update" formmethod="POST" name="update">Update</button>
+            <button class="button-form" type="submit" formaction="/listing/{{listing._id}}/delete" formmethod="POST" name="delete">Delete</button>
+          </div>
+        </div>
+    </div>
+  </section>
+</body>
+</html>
