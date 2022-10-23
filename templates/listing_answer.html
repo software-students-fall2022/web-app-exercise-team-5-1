@@ -5,27 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
-  <title>Answer a Question</title>
-</head>
-<body>
+  <title>Laigscrist: Answer a question</title></head>
+<body> 
+  <a href="/listing/{{id}}">Back</a>
   <section class="ask-question">
     <div class="container-ask">
       <div class="header-container">
         <h1>Answer a Question</h1>
       </div>
       <div class="form-container">
-        <form action="/ask" method="POST">
-          <span>
-            Question:
-          </span>
-          <span>
-            What is the meaning of life?
-          </span>
+        <form action="#" method="post" enctype="multipart/form-data">
           <div class="field-container">
             <br>
             <label for="answer">Your answer:</label>
             <br>
-            <textarea name="answer" id="answer" cols="30" rows="5"></textarea>
+            <textarea rows="5" cols="64" id="answer" name="answer" required></textarea>
+            <br>          
+          </div>
+          <div class="field-container">
+            <label for="password">Listing PIN</label>
+            <br>
+            <input type="password" id="password" name="password" required><br>
           </div>
           <div class="button-container">
             <input class= "button-form" type="submit" value="Answer">
