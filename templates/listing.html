@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listing - {{listing.title}}</title>
+    <title>Laigscrist: {{listing.title}}</title>
 </head>
 <body>
+    <a href="/">Home</a>
     <h1>{{listing.title}}</h1>
     <h3>{{listing.author}}</h3>
+    {% for image in images %}
+    <img src="data:;base64,{{image}}"/>
+    {% endfor %}
     <div>{{listing.description}}</div>
     <div>
         {% for question in questions %}
@@ -17,19 +21,12 @@
             {% if question.answer is defined %}
                 <div>Answer: {{question.answer.body}}</div>
             {% else %}
-                <!--<form method="POST" action="">
-                    <div>Answer this question: <input type="text" name="password"></div>
-                    <div><input type="submit" name="submit"></div>
-                </form> -->
-                <div>No answer provided yet.</div>
+                <div><a href="/listing/{{listing._id}}/answer/{{loop.index0}}">No answer provided yet.</a></div>
             {% endif %}
         </div>
         {% endfor %}
     </div>
-
-    <form method="POST" action="">
-        <div>Edit this post: <input type="text" name="password"></div>
-        <div><input type="submit" name="submit"></div>
-    </form>
+    <a href="/listing/{{listing._id}}/update">Update this listing</a>
+    <a href="/listing/{{listing._id}}/ask">Ask a question</a>
 </body>
 </html>
