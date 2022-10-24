@@ -14,11 +14,10 @@
         <div class = "center-flex image-container h-padding-8" style = "max-height: 80%;" >
             <ul class = "horizontal-carousel">
                 {% for image in images %}
-                <li><img src="data:;base64,{{image}}"/></li>
+                <li><img class = "item-image" src="data:;base64,{{image}}"/></li>
                 {% endfor %}
             </ul>
         </div>
-        
         <div class = "detail-container center-flex h-padding-8">
             
             <div id = "info">
@@ -29,10 +28,12 @@
 
             </div>
         </div>
+
+        {% if question|length > 0 %}
        
         <div class = "white h-padding-8" id = "qa-container">
 
-            <h3 class = "bottom-padding" style="text-decoration: underline;">Questions</h3>
+            <h2 class = "bottom-padding" style="padding-bottom: 5%">Questions</h2>
             {% for question in questions %}
             <div>
                 <div>{{question.body}}</div>
@@ -49,6 +50,7 @@
             </div>
             {% endfor %}
         </div>
+        {% endif %}
 
         <div class = "h-padding-8" id = "edit-container">
             <a href = "/listing/{{listing._id}}/update" class = "button center-flex bold-text red-background ">Edit this listing</a>
