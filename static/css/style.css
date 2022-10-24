@@ -110,6 +110,10 @@ input[type=text] {
     margin-top: 15%;
 }
 
+.container-ask {
+    width:100%;
+}
+
 .item-container{
 
     overflow-y: scroll;
