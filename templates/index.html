@@ -44,23 +44,6 @@
                             </div>
                         </div>
                 </div>
-                <div class = "item">
-                    
-                    {% if 'image' in listing %}
-                        <img class = "item-image" src="data:;base64,{{listing.image}}"/>
-                    {% endif %}
-                        
-                        <div id = "info">
-                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
-                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
-                            <div class = "white bottom-padding">{{listing.price}}</div>
-                            <!-- <div class = "white bottom-padding">{{listing.description}}</div> -->
-                        
-                            <div>
-                                <a href="/listing/{{listing._id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
-                            </div>
-                        </div>
-                </div>
                 {% endfor %}
                 
             </div>
