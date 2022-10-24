@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>View Listings</title>
-    <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -14,7 +14,7 @@
 
                     <input type="text" class ="black-background" placeholder="Search..">
                     <a href = "#">
-                        <img src = "../pages/image/search-icon.png" id = "searchIcon">
+                        <img src = "{{ url_for('static', filename='image/search-icon.png') }}" id = "searchIcon">
                     </a>
 
                 
@@ -68,10 +68,10 @@
         
         <div id = "page-navigation">
             {% if prev_page != 0 %}
-            <a href="/?page={{prev_page}}"><img src = "../pages/image/arrow_right.png" style = "transform: scaleX(-1); height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            <a href="/?page={{prev_page}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "transform: scaleX(-1); height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
             {% endif %}
             {% if next_page != -1 %}
-            <a href="/?page={{next_page}}"><img src = "../pages/image/arrow_right.png" style = "height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            <a href="/?page={{next_page}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
             {% endif %}
         </div>
 

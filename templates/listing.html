@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listing - {{listing.title}}</title>
-    <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
-    <link rel = "stylesheet" type = "text/css" href = "../pages/css/detailScreen.css">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/detailScreen.css') }}">
 </head>
 <body>
     <div>
@@ -14,7 +14,7 @@
             <div id = "searchBar" >
                 <input type="text" class ="black-background" placeholder="Search..">
                 <a href = "#">
-                    <img src = "../pages/image/search-icon.png" id = "searchIcon">
+                    <img src = "{{ url_for('static', filename='image/search-icon.png') }}" id = "searchIcon">
                 </a>
             </div>
             <div>
