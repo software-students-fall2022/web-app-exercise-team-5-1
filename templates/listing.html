@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <a href = "index.html" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
+        <a href = "/" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
         <nav>
             <div id = "searchBar" >
                 <input type="text" class ="black-background" placeholder="Search..">
@@ -53,7 +53,7 @@
                 {% else %} -->
                     <div>No answer provided yet.</div>
                     <div style = "padding-bottom: 8%; padding-top: 2%;">
-                        <a href = "answer_question.html" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
+                        <a href = "/listing/{{listing._id}}/answer/{{loop.index0}}" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
                     </div>
                 {% endif %}
             </div>
@@ -73,7 +73,7 @@
         </div>
 
         <div class = "h-padding-8" id = "edit-container">
-            <a href = "listing_update.html" class = "button center-flex bold-text red-background ">Edit this listing</a>
+            <a href = "/listing/{{listing._id}}/update" class = "button center-flex bold-text red-background ">Edit this listing</a>
         </div> 
     </div>
 </body>
