@@ -12,7 +12,6 @@ def index():
                         if "search" in request.args.keys() and request.args["search"] != '' \
                         else {}
         listings_cursor = listings_collection.find(search, ["title", "price", "description", "author", "images"]) \
-                                             .sort("timestamp", pymongo.DESCENDING) \
                                              .skip((page - 1) * LISTINGS_PER_PAGE) \
                                              .limit(LISTINGS_PER_PAGE + 1)
     except ValueError:
