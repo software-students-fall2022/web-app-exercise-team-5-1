@@ -10,14 +10,13 @@
     <div style="height: 99vh; display: flex; flex-direction: column;">
         <h2 class = "logo center-flex">Laigscrist</h2>
         <nav>
-            <div id = "searchBar" >
-
-                    <input type="text" class ="black-background white" placeholder="Search..">
-                    <a href = "#">
+            <div>
+                    <form action="/" id = "searchBar" >
+                    <input type="text" class ="black-background white" placeholder="Search..." name="search">
+                    <button type="submit" id="searchButton">
                         <img src = "{{ url_for('static', filename='image/search-icon.png') }}" id = "searchIcon">
-                    </a>
-
-                
+                    </button>
+                    </form>
             </div>
             <div>
                 <a href="#" class = "button bold-text red-background" style="margin-left: 10%;">Sell</a>
@@ -51,10 +50,10 @@
         
         <div id = "page-navigation">
             {% if prev_page != 0 %}
-            <a href="/?page={{prev_page}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "transform: scaleX(-1); height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            <a href="/?page={{prev_page}}&search={{search}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "transform: scaleX(-1); height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
             {% endif %}
             {% if next_page != -1 %}
-            <a href="/?page={{next_page}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            <a href="/?page={{next_page}}&search={{search}}"><img src = "{{ url_for('static', filename='image/arrow_right.png') }}" style = "height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
             {% endif %}
         </div>
 
