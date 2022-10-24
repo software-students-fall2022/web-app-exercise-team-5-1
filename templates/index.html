@@ -2,42 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Laigscrist</title>
+    <title>View Listings</title>
+    <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form method="GET">
-        <input type="text" name="search">
-        <input type="submit">
-    </form>
+    <div style="height: 99vh; display: flex; flex-direction: column;">
+        <h2 class = "logo center-flex">Laigscrist</h2>
+        <nav>
+            <div id = "searchBar" >
 
-    <a href="/listing/create">Create a listing</a>
-    
-    <div id="listings">
-        {% if listings|length == 0 %}
-            There are no listings at this query.
-        {% else %}
-            {% for listing in listings %}
-            <div>
-                <h3>{{listing.title}}</h3>
-                <div>Listed by {{listing.author}}</div>
-                <div>Price is {{listing.price}}</div>
-                <div>Description: {{listing.description}}</div>
-                <div><a href="/listing/{{listing._id}}">See more</a></div>
-                {% if 'image' in listing %}
-                <img src="data:;base64,{{listing.image}}"/>
-                {% endif %}
+                    <input type="text" class ="black-background" placeholder="Search..">
+                    <a href = "#">
+                        <img src = "../pages/image/search-icon.png" id = "searchIcon">
+                    </a>
+
+                
             </div>
-            {% endfor %}
-        {% endif %}
+            <div>
+                <a href="#" class = "button bold-text red-background" style="margin-left: 10%;">Sell</a>
+            </div>
+        </nav>
+
+        <div class = "item-container">
+            <div id = "listings">
+                {% for listing in listings %}
+                <div class = "item">
+                    
+                    {% if 'image' in listing %}
+                        <img class = "item-image" src="data:;base64,{{listing.image}}"/>
+                    {% endif %}
+                        
+                        <div id = "info">
+                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                            <div class = "white bottom-padding">{{listing.price}}</div>
+                            <!-- <div class = "white bottom-padding">{{listing.description}}</div> -->
+                        
+                            <div>
+                                <a href="/listing/{{listing._id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                </div>
+                <div class = "item">
+                    
+                    {% if 'image' in listing %}
+                        <img class = "item-image" src="data:;base64,{{listing.image}}"/>
+                    {% endif %}
+                        
+                        <div id = "info">
+                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                            <div class = "white bottom-padding">{{listing.price}}</div>
+                            <!-- <div class = "white bottom-padding">{{listing.description}}</div> -->
+                        
+                            <div>
+                                <a href="/listing/{{listing._id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                            </div>
+                        </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        
+        <div id = "page-navigation">
+            {% if prev_page != 0 %}
+            <a href="/?page={{prev_page}}"><img src = "../pages/image/arrow_right.png" style = "transform: scaleX(-1); height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            {% endif %}
+            {% if next_page != -1 %}
+            <a href="/?page={{next_page}}"><img src = "../pages/image/arrow_right.png" style = "height: 4vh;width: auto; filter: brightness(0) invert(1);"></a>
+            {% endif %}
+        </div>
+
     </div>
 
-    <div>
-        {% if prev_page != 0 %}
-        <a href="/?page={{prev_page}}&search={{search}}">Previous page</a>
-        {% endif %}
-        {% if next_page != -1 %}
-        <a href="/?page={{next_page}}&search={{search}}">Next page</a>
-        {% endif %}
-    </div>
 </body>
 </html>

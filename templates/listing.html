@@ -3,30 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laigscrist: {{listing.title}}</title>
+    <title>Listing - {{listing.title}}</title>
+    <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
+    <link rel = "stylesheet" type = "text/css" href = "../pages/css/detailScreen.css">
 </head>
 <body>
-    <a href="/">Home</a>
-    <h1>{{listing.title}}</h1>
-    <h3>{{listing.author}}</h3>
-    {% for image in images %}
-    <img src="data:;base64,{{image}}"/>
-    {% endfor %}
-    <div>{{listing.description}}</div>
     <div>
-        {% for question in questions %}
-        <div>
-            <div>{{question.body}}</div>
-            <div>Asked by {{question.author}}</div>
-            {% if question.answer is defined %}
-                <div>Answer: {{question.answer.body}}</div>
-            {% else %}
-                <div><a href="/listing/{{listing._id}}/answer/{{loop.index0}}">No answer provided yet.</a></div>
-            {% endif %}
+        <a href = "index.html" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
+        <nav>
+            <div id = "searchBar" >
+                <input type="text" class ="black-background" placeholder="Search..">
+                <a href = "#">
+                    <img src = "../pages/image/search-icon.png" id = "searchIcon">
+                </a>
+            </div>
+            <div>
+                <a href="#" class = "button bold-text red-background">Sell</a>
+            </div>
+        </nav>
+
+        <div class = "center-flex image-container h-padding-8" style = "max-height: 80%;" >
+            <ul class = "horizontal-carousel">
+                {% for image in images %}
+                <li><img src="data:;base64,{{image}}"/></li>
+                {% endfor %}
+            </ul>
         </div>
-        {% endfor %}
+        
+        <div class = "detail-container center-flex h-padding-8">
+            
+            <div id = "info">
+                <h3 class = "white bottom-padding">{{listing.title}}</h3>
+                <div class = "white bottom-padding">Listed by {{listing.author}}</div>
+                <div class = "white bottom-padding">{{listing.price}}</div>
+                <div class = "white bottom-padding">Description: {{listing.description}}</div>
+
+            </div>
+        </div>
+       
+        <div class = "white h-padding-8" id = "qa-container">
+
+            <h3 class = "bottom-padding" style="text-decoration: underline;">Questions</h3>
+            {% for question in questions %}
+            <div>
+                <div>{{question.body}}</div>
+                <div>Asked by {{question.author}}</div>
+                {% if question.answer is defined %}
+                    <div>Answer: {{question.answer.body}}</div>
+                {% else %} -->
+                    <div>No answer provided yet.</div>
+                    <div style = "padding-bottom: 8%; padding-top: 2%;">
+                        <a href = "answer_question.html" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
+                    </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class = "white h-padding-8" id = "contact-container">
+
+            <h3 class = "white bottom-padding" style="text-decoration: underline;">Contact</h3>
+            <div>
+
+                <p>Phone: (888) 888-8888</p>
+                <p>Email: contact_email@gmail.com</p>
+                
+            </div>
+
+        </div>
+
+        <div class = "h-padding-8" id = "edit-container">
+            <a href = "listing_update.html" class = "button center-flex bold-text red-background ">Edit this listing</a>
+        </div> 
     </div>
-    <a href="/listing/{{listing._id}}/update">Update this listing</a>
-    <a href="/listing/{{listing._id}}/ask">Ask a question</a>
 </body>
 </html>
