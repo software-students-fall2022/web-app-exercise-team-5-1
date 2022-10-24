@@ -3,7 +3,7 @@ import pymongo
 from db import listings_collection
 from base64 import b64encode
 
-LISTINGS_PER_PAGE = 1 # for testing, probably will be 20 or something in prod
+LISTINGS_PER_PAGE = 3 # for testing, probably will be 20 or something in prod
 
 def index():
     try:
