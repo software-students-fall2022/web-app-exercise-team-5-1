@@ -50,12 +50,13 @@
                 <div>Asked by {{question.author}}</div>
                 {% if question.answer is defined %}
                     <div>Answer: {{question.answer.body}}</div>
-                {% else %} -->
+                {% else %}
                     <div>No answer provided yet.</div>
                     <div style = "padding-bottom: 8%; padding-top: 2%;">
                         <a href = "/listing/{{listing._id}}/answer/{{loop.index0}}" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
                     </div>
                 {% endif %}
+                <br>
             </div>
             {% endfor %}
         </div>
