@@ -10,17 +10,6 @@
 <body>
     <div>
         <a href = "/" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
-        <nav>
-            <div id = "searchBar" >
-                <input type="text" class ="black-background white" placeholder="Search..">
-                <a href = "#">
-                    <img src = "{{ url_for('static', filename='image/search-icon.png') }}" id = "searchIcon">
-                </a>
-            </div>
-            <div>
-                <a href="#" class = "button bold-text red-background">Sell</a>
-            </div>
-        </nav>
 
         <div class = "center-flex image-container h-padding-8" style = "max-height: 80%;" >
             <ul class = "horizontal-carousel">
@@ -59,18 +48,6 @@
                 <br>
             </div>
             {% endfor %}
-        </div>
-
-        <div class = "white h-padding-8" id = "contact-container">
-
-            <h3 class = "white bottom-padding" style="text-decoration: underline;">Contact</h3>
-            <div>
-
-                <p>Phone: (888) 888-8888</p>
-                <p>Email: contact_email@gmail.com</p>
-                
-            </div>
-
         </div>
 
         <div class = "h-padding-8" id = "edit-container">
