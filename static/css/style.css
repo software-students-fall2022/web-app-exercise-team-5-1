@@ -107,7 +107,7 @@ input[type=text] {
     /* invert to whtie icon since original is black */
     filter: invert(1) opacity(90%);
     height: 80%;
-    margin-top: 15%;
+    margin-right: 3px;
 }
 
 .container-ask {
@@ -148,7 +148,7 @@ input[type=text] {
     display: block;
     max-width:80vw;
     max-height:50vh;
-    height: 300px;
+    /* height: 300px; */
     width: auto;
 
 }
@@ -247,4 +247,12 @@ input, textarea {
 
 .back-button {
   display: flex;
+}
+
+#searchButton {
+    width: 30%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
 }

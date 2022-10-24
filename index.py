@@ -3,7 +3,7 @@ import pymongo
 from db import listings_collection
 from base64 import b64encode
 
-LISTINGS_PER_PAGE = 1 # for testing, probably will be 20 or something in prod
+LISTINGS_PER_PAGE = 3 # for testing, probably will be 20 or something in prod
 
 def index():
     try:
@@ -12,7 +12,6 @@ def index():
                         if "search" in request.args.keys() and request.args["search"] != '' \
                         else {}
         listings_cursor = listings_collection.find(search, ["title", "price", "description", "author", "images"]) \
-                                             .sort("timestamp", pymongo.DESCENDING) \
                                              .skip((page - 1) * LISTINGS_PER_PAGE) \
                                              .limit(LISTINGS_PER_PAGE + 1)
     except ValueError:

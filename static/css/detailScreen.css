@@ -16,12 +16,14 @@
     overflow-x: scroll;
 }
 
-.horizontal-carousel img
-{
+.horizontal-carousel > li {
+    padding: 5%;
+}
 
-    padding-right: 10%;
+.horizontal-carousel > li > img
+{
     width: auto;
-    height: 500px;
+    max-height: 500px;
 }
 
 .image-container
