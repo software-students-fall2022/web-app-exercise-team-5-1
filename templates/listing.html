@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listing - {{listing.title}}</title>
-    <link rel = "stylesheet" type = "text/css" href = "../pages/css/style.css">
-    <link rel = "stylesheet" type = "text/css" href = "../pages/css/detailScreen.css">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/style.css') }}">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='css/detailScreen.css') }}">
 </head>
 <body>
     <div>
-        <a href = "index.html" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
+        <a href = "/" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
         <nav>
             <div id = "searchBar" >
-                <input type="text" class ="black-background" placeholder="Search..">
+                <input type="text" class ="black-background white" placeholder="Search..">
                 <a href = "#">
-                    <img src = "../pages/image/search-icon.png" id = "searchIcon">
+                    <img src = "{{ url_for('static', filename='image/search-icon.png') }}" id = "searchIcon">
                 </a>
             </div>
             <div>
@@ -50,12 +50,13 @@
                 <div>Asked by {{question.author}}</div>
                 {% if question.answer is defined %}
                     <div>Answer: {{question.answer.body}}</div>
-                {% else %} -->
+                {% else %}
                     <div>No answer provided yet.</div>
                     <div style = "padding-bottom: 8%; padding-top: 2%;">
-                        <a href = "answer_question.html" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
+                        <a href = "/listing/{{listing._id}}/answer/{{loop.index0}}" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
                     </div>
                 {% endif %}
+                <br>
             </div>
             {% endfor %}
         </div>
@@ -73,7 +74,9 @@
         </div>
 
         <div class = "h-padding-8" id = "edit-container">
-            <a href = "listing_update.html" class = "button center-flex bold-text red-background ">Edit this listing</a>
+            <a href = "/listing/{{listing._id}}/update" class = "button center-flex bold-text red-background ">Edit this listing</a>
+            <br>
+            <a href = "/listing/{{listing._id}}/ask" class = "button center-flex bold-text red-background ">Ask A Question</a>
         </div> 
     </div>
 </body>

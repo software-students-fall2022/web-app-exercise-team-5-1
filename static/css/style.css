@@ -96,7 +96,6 @@ nav{
 }
 
 input[type=text] {
-    color: white;
     border: 1.5px solid transparent;
     border-radius: 15px;
     font-size: 17px;
@@ -109,6 +108,10 @@ input[type=text] {
     filter: invert(1) opacity(90%);
     height: 80%;
     margin-top: 15%;
+}
+
+.container-ask {
+    width:100%;
 }
 
 .item-container{
@@ -217,7 +220,7 @@ input[type=text] {
 input, textarea {
   margin: 0.3em;
   padding: 10px;
-  width: 500px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 20px;
   resize: vertical;

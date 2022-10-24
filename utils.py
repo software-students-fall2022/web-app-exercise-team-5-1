@@ -9,7 +9,7 @@ def get_listing_by_id(id):
     return listing
 
 def check_listing_password(form, listing):
-    return "password" in form and bcrypt.checkpw(form["password"].encode('utf8'), listing["password"].encode('utf8'))
+    return "password" in form and bcrypt.checkpw(form["password"].encode('utf8'), listing["password"])
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
 
