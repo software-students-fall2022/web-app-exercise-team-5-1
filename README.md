@@ -3,6 +3,10 @@
 
 A little exercise to build a web application following an agile development process. See the [instructions](instructions.md) for more detail.
 
+## Team Members
+
+Harrison Douglass, Laura Lourenco, Evan Huang, and Bruce Wu
+
 ## Product vision statement
 
 A platform to connect people offering goods and services with those who are interested.
@@ -23,3 +27,12 @@ A platform to connect people offering goods and services with those who are inte
 [Task Board for Sprint 1](https://github.com/orgs/software-students-fall2022/projects/13/views/1)
 
 [Task Board for Sprint 2](https://github.com/orgs/software-students-fall2022/projects/37/views/1)
+
+## Runbook
+
+1. `git clone` this repository into your local system.
+2. `cd` into the repository.
+3. Create a python environment, and activate it. (Instructions can be found [here](https://docs.python.org/3/library/venv.html).)
+4. Run `pip install -r requirements.txt`.
+5. In the main folder, create a file named `.env` with the contents found in [this Discord message](https://discord.com/channels/1014892538601152572/1029450800226914304/1034338255824490507).
+6. Open your browser and navigate to `localhost:5000` to view the webpage.
