@@ -13,6 +13,10 @@ button:focus {
     outline: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 body{
     background-color: black;
     background-size: cover;
@@ -27,6 +31,7 @@ body{
     text-transform: capitalize;
 }
 
+
 .button{
     color:white;
     text-decoration: none;
@@ -35,17 +40,45 @@ body{
     border-radius:30px;
 }
 
-img{
-    max-width: auto;
-    max-height: 500px;
+.btn-seemore {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: underline;
 }
+
 
 .center-flex{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
+.listing-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+
+.listing-author, .listing-price{
+    font-size: 15px;
+    color: white;
+}
+
+.listing-price {
+    padding: 10px;
+}
+
+.listing-description {
+    font-size: 15px;
+    color: white;
+    padding: 25px;
+    margin: 20px 80px;
+}
+
 /* paddings */ 
 .bottom-padding{
     padding-bottom: 1%;
@@ -67,43 +100,36 @@ img{
     padding-top: 3vh;
     font-size: 35px;
     letter-spacing: 2px;
+    text-decoration: none;
 }
 
 
 
-nav{
-    
+nav {
     padding: 2vh 8%;
     display: flex;
     align-items: center;
-    
     justify-content: space-between;
-
     display: flex;
-
 }
 
-#searchBar{
+#searchBar {
     height: 40px;
     width: 100%;
     display: flex;
-
     border: 1.5px solid rgba(255, 226, 226, 0.241);
     border-radius: 15px;
-
     justify-content: space-between;
-    
 }
 
 input[type=text] {
     border: 1.5px solid transparent;
     border-radius: 15px;
     font-size: 17px;
-
     width: 100%;
 }
 
-#searchIcon{
+#searchIcon {
     /* invert to whtie icon since original is black */
     filter: invert(1) opacity(90%);
     height: 80%;
@@ -114,51 +140,41 @@ input[type=text] {
     width:100%;
 }
 
-.item-container{
-
-    overflow-y: scroll;
+.item-container {
     scrollbar-width: 10px;
 }
 
-#listings{
-
+#listings {
     flex-direction: column;
-
     overflow-x: auto;
-
     max-height: 100%;
-
     list-style: none;
-
     width: 100%;
-
 }
 
-.item{
+.item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2.5vh 5vw;
     width: 100%;
-
 }
 
-.item-image{
+.item-image {
     display: block;
     max-width:80vw;
     max-height:50vh;
-    /* height: 300px; */
     width: auto;
 
 }
 
-#info{
+.info {
     color: white;
     text-align: center;
 }
 
-#page-navigation{
+#page-navigation {
     padding-left: 8%;
     padding-right: 8%;
     display: flex;
@@ -215,6 +231,31 @@ input[type=text] {
   font-weight: bold;
   width: 225px;
   margin: 2em 2em;
+}
+
+.question-body {
+    background-color: white;
+    border-radius: 30px;
+    color: black;
+    padding: 1em;
+}
+
+.question-author {
+    padding-left: 1em;
+}
+
+.answer {
+    border-radius: 30px;
+    text-align: end;
+    margin-top: 2em;
+    padding: 1em;
+    color: black;
+    background: #ccc;
+}
+
+.answer-author {
+    padding-right: 1em;
+    text-align: end;
 }
 
 input, textarea {

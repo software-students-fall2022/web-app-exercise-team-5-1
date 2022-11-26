@@ -9,9 +9,9 @@
 </head>
 <body>
     <div>
-        <a href = "/" style = "text-decoration: none;"><h2 class = "logo center-flex">Laigscrist</h2></a>
+        <a href = "/" ><h2 class="logo center-flex">Laigscrist</h2></a>
 
-        <div class = "center-flex image-container h-padding-8" style = "max-height: 80%;" >
+        <div class = "center-flex image-container h-padding-8">
             <ul class = "horizontal-carousel">
                 {% for image in images %}
                 <li><img class = "item-image" src="data:;base64,{{image}}"/></li>
@@ -20,30 +20,32 @@
         </div>
         <div class = "detail-container center-flex h-padding-8">
             
-            <div id = "info">
-                <h3 class = "white bottom-padding">{{listing.title}}</h3>
-                <div class = "white bottom-padding">Listed by {{listing.author}}</div>
-                <div class = "white bottom-padding">{{"${:,.2f}".format(listing.price)}}</div>
-                <div class = "white bottom-padding" style="white-space: pre-line;">Description: {{listing.description}}</div>
+            <div class="info">
+                <h3 class = "listing-title">{{listing.title}}</h3>
+                <div class = "listing-author">Listed by {{listing.author}}</div>
+                <div class = "listing-price">{{"${:,.2f}".format(listing.price)}}</div>
+                <div class="description">Description:</div>
+                <div class = "listing-description"><i>"{{listing.description}}"</i></div>
 
             </div>
         </div>
 
         {% if questions|length > 0 %}
        
-        <div class = "white h-padding-8" id = "qa-container">
+        <div class = "white h-padding-8">
 
-            <h2 class = "bottom-padding" style="padding-bottom: 5%">Questions</h2>
+            <h2 class = "bottom-padding">Questions</h2>
             {% for question in questions %}
-            <div>
-                <div>{{question.body}}</div>
-                <div>Asked by {{question.author}}</div>
+            <div class="questions">
+                <div class="question-body">{{question.body}}</div>
+                <div class="question-author"><i>{{question.author}} asked </i></div>
                 {% if question.answer is defined %}
-                    <div>Answer: {{question.answer.body}}</div>
+                    <div class="answer">{{question.answer.body}}</div>
+                    <div class="answer-author"><i>{{listing.author}} replied </i></div>
                 {% else %}
                     <div>No answer provided yet.</div>
-                    <div style = "padding-bottom: 8%; padding-top: 2%;">
-                        <a href = "/listing/{{listing._id}}/answer/{{loop.index0}}" class = "button" style = "padding: 0; color: gray; float: right;">Answer this question</a>
+                    <div>
+                        <a href = "/listing/{{listing._id}}/answer/{{loop.index0}}" class = "button">Answer this question</a>
                     </div>
                 {% endif %}
                 <br>

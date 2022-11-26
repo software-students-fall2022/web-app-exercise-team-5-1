@@ -32,14 +32,14 @@
                         <img class = "item-image" src="data:;base64,{{listing.image}}"/>
                     {% endif %}
                         
-                        <div id = "info">
-                            <h3 class = "white bottom-padding">{{listing.title}}</h3>
-                            <div class = "white bottom-padding">Listed by {{listing.author}}</div>
-                            <div class = "white bottom-padding">{{"${:,.2f}".format(listing.price)}}</div>
+                        <div class = "info">
+                            <h3 class = "listing-title">{{listing.title}}</h3>
+                            <div class = "listing-author">Listed by {{listing.author}}</div>
+                            <div class = "listing-price">{{"${:,.2f}".format(listing.price)}}</div>
                             <!-- <div class = "white bottom-padding">{{listing.description}}</div> -->
                         
                             <div>
-                                <a href="/listing/{{listing._id}}" class = "button bold-text white" style="text-decoration: none;">See more</a>
+                                <a href="/listing/{{listing._id}}" class="btn-seemore">See more</a>
                             </div>
                         </div>
                 </div>
